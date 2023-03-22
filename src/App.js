@@ -5,8 +5,13 @@ import './App.css';
 
 function App() {
   const nayoks=[{name:'sakib khan', age:65}, {name:'Jafor Iqbal', age:65}, {name:'Razzak', age:65}]
+  const students=[{name:'Shuvo', age:25}, {name:'Sharif', age:35}, {name:'Rahman', age:25}]
   return (
     <div className="App">
+      <Student></Student>
+      {
+        students.map(st=><Student name={st.name} age={st.age}></Student>)
+      }
       
       <MovieCounter></MovieCounter>
       {
@@ -41,6 +46,15 @@ function MovieCounter(){
 }
 function MovieDisplay(props){
   return(<h3>Movies i have Acteed :{props.movies}</h3>)
+}
+
+
+//Student Attribute
+
+function Student(props){
+  return(<div>
+    <h3>Student Name:{props.name} </h3>
+  </div>)
 }
 
 export default App;
